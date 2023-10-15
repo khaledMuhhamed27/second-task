@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +17,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/articlez', [ArticleController::class, 'index']);
+Route::get('/articles/{id}', [ArticleController::class, 'getArticle']);
+Route::get('/users', function () {
+    return User::create(
+        [
+            'name' => 'xaleto',
+            'email' => 'xale@gmail.com',
+            'password' => bcrypt('54321s'),
+        ]
+    );
 });
