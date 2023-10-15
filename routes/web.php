@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ArticleController;
+use App\Models\Article;
 use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
@@ -27,6 +28,14 @@ Route::get('/users', function () {
             'name' => 'xaleto',
             'email' => 'xale@gmail.com',
             'password' => bcrypt('54321s'),
+        ]
+    );
+});
+Route::get('/newart', function () {
+    return Article::create(
+        [
+            'title' => 'xaleto',
+            'body' => ' madkjawhkjd awhd kawhd kajwd jawhd hawj dkjaw',
         ]
     );
 });
