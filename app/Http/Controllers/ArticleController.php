@@ -22,7 +22,7 @@ class ArticleController extends Controller
         $articles = [];
         for (
             $i = 0;
-            $i < 10;
+            $i < 100;
             $i++
         ) {
             # code...
